@@ -2,12 +2,16 @@ package kr.co.tjoeun.a20200318_03_listview01.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.util.List;
 
+import kr.co.tjoeun.a20200318_03_listview01.R;
 import kr.co.tjoeun.a20200318_03_listview01.datas.Store;
 
 //빨간줄 생기면  Alt + Enter 누르면 => 에러 해결 제안나옴
@@ -28,6 +32,17 @@ public class StoreAdaptere extends ArrayAdapter<Store> {
 //        inf는 따로 골라줘야함 .from 붙은걸로
         inf = LayoutInflater.from(mContext);
 
+    }
 
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+//           여기에서 convertView 복붙임.
+        View row = convertView; // row는 지금 그려져야할 줄을 담는다.
+        if(row == null){
+//            기존에 그려둔게 없어서 (=null) 새로 그려야하냐??
+            row = inf.inflate(R.layout.store_list_item, null);
+        }
+        return row;
     }
 }
