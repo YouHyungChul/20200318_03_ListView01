@@ -16,12 +16,14 @@
             android:src="@mipmap/ic_launcher"/>
 
         <LinearLayout
+            android:id="@+id/storeNameTxt"
             android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/storeRatingTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="가게이름"
